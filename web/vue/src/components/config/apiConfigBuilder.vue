@@ -45,7 +45,11 @@ export default {
       if(!this.exchange)
         return [];
 
-      return this.exchanges[this.exchange].requires;
+      if (this.exchanges[this.exchange]) {
+        return this.exchanges[this.exchange].requires;
+      } else {
+        return [];
+      }
     },
     config: function() {
       let config = {
